@@ -1,0 +1,30 @@
+dec summy : num # num -> num;
+--- summy (x, y) <= x + y;
+
+dec tri : num -> num;
+--- tri x <= pow (x, 3);
+
+dec fat : num -> num;
+--- fat 0 <= 1;
+--- fat n <= n * fat (n - 1);
+
+dec fibo : num -> num;
+--- fibo 0 <= 1;
+--- fibo 1 <= 1;
+--- fibo n <= fibo (n - 1) + fibo(n - 2);
+
+dec ftbase : num # num -> num;
+--- ftbase (0 , x) <= x;
+--- ftbase (n , x) <= ftbase (n - 1, n * x);
+
+dec fat2 : num -> num;
+--- fat2 n <= ftbase (n , 1);
+
+dec fbs : num # num # num -> num;
+--- fbs (0, prev, act) <= prev;
+--- fbs (1, prev, act) <= act;
+--- fbs (2, prev, act) <= act + prev;
+--- fbs (n, prev, act) <= fbs (n - 1, act, prev + act);
+
+dec fibo2 : num -> num;
+--- fibo2 n <= fbs (n, 0, 1);
