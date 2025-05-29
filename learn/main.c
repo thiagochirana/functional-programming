@@ -1,4 +1,7 @@
 #include "lexer.h"
+#include "parser.h"
+#include "ast.h"
+#include "interpreter.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -38,10 +41,10 @@ int main(int argc, char** argv) {
     int token_count;
     Token* tokens = tokenize(source_code, &token_count);
 
-    printf("Tokens:\n");
-    for (int i = 0; i < token_count; i++) {
-        printf("  [%d] Type: %d, Value: %s\n", i, tokens[i].type, tokens[i].value);
-    }
+    int ast_count;
+    ASTNode** ast = parse(tokens, token_count, &ast_count);
+    
+    interpret(ast, ast_count);
 
     free(source_code);
     return 0;
