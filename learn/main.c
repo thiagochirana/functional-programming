@@ -1,7 +1,8 @@
-#include "lexer.h"
-#include "parser.h"
-#include "ast.h"
-#include "interpreter.h"
+#include "include/lexer.h"
+#include "include/parser.h"
+#include "include/ast.h"
+#include "include/interpreter.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 

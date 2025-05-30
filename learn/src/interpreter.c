@@ -1,4 +1,4 @@
-#include "interpreter.h"
+#include "../include/interpreter.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
